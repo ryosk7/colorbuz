@@ -5,9 +5,9 @@
       v-layout(row justify-space-between)
         v-flex.text-xs-left(md3)
           side-nav
-        v-flex(md9)
+        v-flex(md8)
           nuxt
-        v-flex(md2)
+        v-flex(md3)
           
 </template>
 
