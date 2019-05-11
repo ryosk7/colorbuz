@@ -1,6 +1,6 @@
 <template lang="pug">
   div
-    v-carousel(hide-delimiters="" height="300")
+    v-carousel(hide-delimiters="" height="30%" width="auto")
       v-carousel-item(v-for="(item,i) in items" :key="i" :src="item.src")
     h1.content-title Hot This Week
     v-container.pa-0(fluid="" grid-list-md="")
