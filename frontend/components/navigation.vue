@@ -1,5 +1,5 @@
 <template lang="pug">
-  v-toolbar(scroll-off-screen="" scroll-target="#scrolling-techniques")
+  v-toolbar(dense fixed)
     v-toolbar-title colorbuz
     v-spacer
     v-toolbar-items.hidden-sm-and-down

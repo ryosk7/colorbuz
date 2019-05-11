@@ -1,7 +1,7 @@
 <template lang="pug">
   v-app
     header-nav
-    v-container.my-0(fluid)
+    v-container.my-5(fluid)
       v-layout(row justify-space-between)
         v-flex.text-xs-left(md3 hidden-md-and-down)
           side-nav

@@ -1,12 +1,12 @@
 <template lang="pug">
   div
-    v-carousel(hide-delimiters="" height="30%" width="auto")
+    v-carousel(hide-delimiters="" height="50%" width="auto")
       v-carousel-item(v-for="(item,i) in items" :key="i" :src="item.src")
-    h1.content-title Hot This Week
+    h1.content-title.my-4 Hot This Week
     v-container.pa-0(fluid="" grid-list-md="")
       v-layout(row="" wrap="" justify-start="")
         v-flex(v-for="card in cards" :key="card.title" xs12 sm6 xl4)
-          v-card.ma-2(width="auto")
+          v-card.ma-2(width="auto" hover="")
             v-img(:src="card.src" height="200px")
               v-container(fluid="" pa-2="")
                 v-layout
@@ -61,7 +61,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
+}
+
+.content-title {
+  font-size: 4em
 }
 
 .title {
