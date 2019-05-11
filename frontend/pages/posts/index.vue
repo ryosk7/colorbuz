@@ -4,9 +4,9 @@
       v-carousel-item(v-for="(item,i) in items" :key="i" :src="item.src")
     h1.content-title Hot This Week
     v-container.pa-0(fluid="" grid-list-md="")
-      v-layout(row="" wrap="" justify-end="")
-        v-flex(v-for="card in cards" :key="card.title" v-bind="{ [`xs${card.flex}`]: true }")
-          v-card(width="auto")
+      v-layout(row="" wrap="" justify-start="")
+        v-flex(v-for="card in cards" :key="card.title" xs12 sm6 xl4)
+          v-card.ma-2(width="auto")
             v-img(:src="card.src" height="200px")
               v-container(fluid="" pa-2="")
                 v-layout
@@ -44,9 +44,9 @@
         ],
         height: 300,
         cards: [
-          { title: 'Pre-fab homes', src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg', content: 'oppai', flex: 4 },
-          { title: 'Favorite road trips', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', content: 'takkun', flex: 4 },
-          { title: 'Best airlines', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', content: 'ichiki', flex: 4 }
+          { title: 'Pre-fab homes', src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg', content: 'oppai'},
+          { title: 'Favorite road trips', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', content: 'takkun'},
+          { title: 'Best airlines', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', content: 'ichiki'}
         ]
       }
     },

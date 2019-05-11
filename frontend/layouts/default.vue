@@ -3,11 +3,11 @@
     header-nav
     v-container.my-0(fluid)
       v-layout(row justify-space-between)
-        v-flex.text-xs-left(md3)
+        v-flex.text-xs-left(md3 hidden-md-and-down)
           side-nav
-        v-flex(md8)
+        v-flex.mx-3(md8)
           nuxt
-        v-flex(md3)
+        v-flex(md3 hidden-md-and-down)
           
 </template>
 
