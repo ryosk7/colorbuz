@@ -1,22 +1,28 @@
 <template lang="pug">
-  v-toolbar
-    v-toolbar-side-icon
-    v-toolbar-title colorbuz
-    v-spacer
-    v-toolbar-items.hidden-sm-and-down
-      v-btn(flat="") Link One
-      v-btn(flat="") Link Two
-      v-btn(flat="") Link Three
+  v-app
+    header-nav
+    v-container.my-5(fluid)
+      v-layout(row justify-space-between)
+        v-flex.text-xs-left(md3 hidden-md-and-down)
+          side-nav
+        v-flex.mx-3(md8)
+          nuxt
+        v-flex(md3 hidden-md-and-down)
+          hots-list
+          
 </template>
 
 <script>
+  import HeaderNav from '~/components/navigation'
+  import SideNav from '~/components/SideNav'
+  import HotsList from '~/components/HotsList'
   export default {
     data: () => ({
-      drawer: null
     }),
-
-    props: {
-      source: String
+    components: {
+      HeaderNav,
+      SideNav,
+      HotsList,
     }
   }
 </script>
