@@ -8,18 +8,21 @@
         v-flex.mx-3(md8)
           nuxt
         v-flex(md3 hidden-md-and-down)
+          hots-list
           
 </template>
 
 <script>
   import HeaderNav from '~/components/navigation'
   import SideNav from '~/components/SideNav'
+  import HotsList from '~/components/HotsList'
   export default {
     data: () => ({
     }),
     components: {
       HeaderNav,
       SideNav,
+      HotsList,
     }
   }
 </script>
