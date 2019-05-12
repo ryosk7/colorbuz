@@ -1,44 +1,70 @@
 <template lang="pug">
-  v-container(fluid="" grid-list-md="")
-    v-layout(row="" wrap="" justify-end="")
-      v-flex(v-for="card in cards" :key="card.title" v-bind="{ [`xs${card.flex}`]: true }")
-        v-card
-          v-img(:src="card.src" height="200px")
-            v-container(fill-height="" fluid="" pa-2="")
-              v-layout(fill-height="")
-                v-flex(xs12="" align-end="" flexbox="")
-                  span.headline.white--text(v-text="card.title")
-          span.card-content.headline {{card.content}}
-          v-card-actions
-            v-spacer
-            v-btn(icon="")
-              v-icon favorite
-            v-btn(icon="")
-              v-icon bookmark
-            v-btn(icon="")
-              v-icon share
+  div
+    v-carousel(hide-delimiters="" height="50%" width="auto")
+      v-carousel-item(v-for="(item,i) in items" :key="i" :src="item.src")
+    h1.content-title.my-4 Hot This Week
+    v-container.pa-0(fluid="" grid-list-md="")
+      v-layout(row="" wrap="" justify-start="")
+        v-flex(v-for="card in cards" :key="card.title" xs12 sm6 xl4)
+          v-card.ma-2(width="auto" hover="")
+            v-img(:src="card.src" height="200px")
+              v-container(fluid="" pa-2="")
+                v-layout
+                  v-flex(xs12="" align-end="" flexbox="")
+                    span.headline.white--text(v-text="card.title")
+            span.card-content.headline {{card.content}}
+            v-card-actions
+              v-spacer
+              v-btn(icon="")
+                v-icon favorite
+              v-btn(icon="")
+                v-icon bookmark
+              v-btn(icon="")
+                v-icon share
 </template>
 
 <script>
+  import HeaderNav from '~/components/navigation'
   export default {
-    layout: 'default',
-    data: () => ({
-      cards: [
-        { title: 'Pre-fab homes', src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg', content: 'oppai', flex: 4 },
-        { title: 'Favorite road trips', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', content: 'takkun', flex: 4 },
-        { title: 'Best airlines', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', content: 'ichiki', flex: 4 }
-      ]
-    }),
+    data () {
+      return {
+        items: [
+          {
+            src: 'https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg'
+          },
+          {
+            src: 'https://cdn.vuetifyjs.com/images/carousel/sky.jpg'
+          },
+          {
+            src: 'https://cdn.vuetifyjs.com/images/carousel/bird.jpg'
+          },
+          {
+            src: 'https://cdn.vuetifyjs.com/images/carousel/planet.jpg'
+          }
+        ],
+        height: 300,
+        cards: [
+          { title: 'Pre-fab homes', src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg', content: 'oppai'},
+          { title: 'Favorite road trips', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', content: 'takkun'},
+          { title: 'Best airlines', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', content: 'ichiki'}
+        ]
+      }
+    },
+    props: {
+      source: String
+    }
   }
 </script>
 
 <style>
 .container {
-  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
+}
+
+.content-title {
+  font-size: 4em
 }
 
 .title {
@@ -62,4 +88,3 @@
   padding-top: 15px;
 }
 </style>
-
