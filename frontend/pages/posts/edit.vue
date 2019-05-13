@@ -5,7 +5,7 @@
     <!-- Text Editor -->
     <TuiEditor
       mode="markdown"
-      preview-style="tab"
+      preview-style="vertical"
       height="500px"
     />
     <!-- Markdown Viewer -->
