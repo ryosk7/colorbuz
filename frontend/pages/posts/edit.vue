@@ -1,12 +1,17 @@
-<template lang="pug">
-  div
-    h1 POSTS/EDIT Page
-    h1 POSTS/EDIT Page
-    h1 POSTS/EDIT Page
-    h1 POSTS/EDIT Page
-    h1 POSTS/EDIT Page
-    h1 POSTS/EDIT Page
-    h1 POSTS/EDIT Page
+<template>
+  <div id="top">
+    <!-- Text Editor -->
+    <TuiEditor
+      mode="markdown"
+      preview-style="vertical"
+      height="500px"
+    />
+
+    <!-- Markdown Viewer -->
+    <TuiEditorViewer
+      :value="content"
+    />
+  </div>
 </template>
 
 <script>

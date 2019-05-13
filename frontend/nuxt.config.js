@@ -14,7 +14,8 @@ module.exports = {
     ]
   },
   modules: [
-    '@nuxtjs/vuetify'
+    '@nuxtjs/vuetify',
+    '@nuxt-tui/editor'
   ],
 
   vuetify: {
@@ -25,6 +26,10 @@ module.exports = {
       accent: '#8c9eff',
       error: '#b71c1c'
     }
+  },
+
+  tui: {
+    editor: {}
   },
   /*
   ** Customize the progress bar color
