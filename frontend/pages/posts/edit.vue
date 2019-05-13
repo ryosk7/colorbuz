@@ -1,12 +1,10 @@
 <template>
   <div id="top">
-    <h1>Edit</h1>
-    <p>Markdownで書いてください。</p>
     <!-- Text Editor -->
     <TuiEditor
       mode="markdown"
       preview-style="vertical"
-      height="500px"
+      height="550px"
     />
     <!-- Markdown Viewer -->
     <TuiEditorViewer
