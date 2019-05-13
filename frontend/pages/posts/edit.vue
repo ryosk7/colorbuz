@@ -1,12 +1,13 @@
 <template>
   <div id="top">
+    <h1>Edit</h1>
+    <p>Markdownで書いてください。</p>
     <!-- Text Editor -->
     <TuiEditor
       mode="markdown"
-      preview-style="vertical"
+      preview-style="tab"
       height="500px"
     />
-
     <!-- Markdown Viewer -->
     <TuiEditorViewer
       :value="content"
@@ -16,8 +17,9 @@
 
 <script>
   export default {
-    layout: 'default',
+    layout: 'editorLayout',
     data: () => ({
+      content: ' '
     }),
   }
 </script>
