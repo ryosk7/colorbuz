@@ -1,12 +1,12 @@
 <template lang="pug">
-  v-card.fixed.pa-0.mt-5.d-inline-block.elevation-12(color="" flat="" width="230px")
+  v-card.fixed.pa-3.mt-5.d-inline-block.elevation-12(color="" flat="" width="230px")
     v-navigation-drawer(floating="" permanent="" stateless="" value="true")
       v-list(dense="")
         v-list-tile(v-for="item in items" :key="item.title" @click="")
           v-list-tile-action
             v-icon {{ item.icon }}
           v-list-tile-content
-            v-list-tile-title {{ item.title }}
+            v-list-tile-title.subheading {{ item.title }}
 </template>
 
 <script>
