@@ -1,25 +1,25 @@
 <template lang="pug">
   div
-    v-carousel(hide-delimiters="" height="50%" width="auto")
+    v-carousel(hide-delimiters height="50%" width="auto")
       v-carousel-item(v-for="(item,i) in items" :key="i" :src="item.src")
-    h1.content-title.my-4 Hot This Week
-    v-container.pa-0(fluid="" grid-list-md="")
-      v-layout(row="" wrap="" justify-start="")
+    h1.content-title.my-4.font-weight-bold.font-italic Hot This Week
+    v-container.pa-0(fluid grid-list-md)
+      v-layout(row wrap justify-start)
         v-flex(v-for="card in cards" :key="card.title" xs12 sm6 xl4)
-          v-card.ma-2(width="auto" hover="")
+          v-card.ma-2(width="auto" hover)
             v-img(:src="card.src" height="200px")
-              v-container(fluid="" pa-2="")
+              v-container(fluid pa-2)
                 v-layout
-                  v-flex(xs12="" align-end="" flexbox="")
+                  v-flex(xs12 align-end flexbox)
                     span.headline.white--text(v-text="card.title")
             span.card-content.headline {{card.content}}
             v-card-actions
               v-spacer
-              v-btn(icon="")
+              v-btn(icon)
                 v-icon favorite
-              v-btn(icon="")
+              v-btn(icon)
                 v-icon bookmark
-              v-btn(icon="")
+              v-btn(icon)
                 v-icon share
 </template>
 
@@ -44,7 +44,7 @@
         ],
         height: 300,
         cards: [
-          { title: 'Pre-fab homes', src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg', content: 'oppai'},
+          { title: 'Pre-fab homes', src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg', content: 'hoge'},
           { title: 'Favorite road trips', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', content: 'takkun'},
           { title: 'Best airlines', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', content: 'ichiki'}
         ]
