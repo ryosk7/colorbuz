@@ -5,10 +5,8 @@
       v-layout(row justify-space-around fill-height)
         v-flex.text-xs-left(md2 hidden-md-and-down)
           side-nav
-        v-flex.mx-3(md8)
+        v-flex.mx-3(md10 xs12)
           nuxt
-        v-flex(md2 hidden-md-and-down)
-          hots-list
           
 </template>
 

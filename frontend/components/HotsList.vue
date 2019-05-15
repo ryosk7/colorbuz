@@ -1,24 +1,12 @@
 <template lang="pug">
-  .hots-list
-    h1.content-title.my-2.mx-3.font-weight-bold.font-italic Hots
+  .hots-list.mt-4
+    h1.content-title.mt-5.mx-3.font-weight-bold.font-italic.pink--text.darken-4 Hots
     v-container.mt-2.mx-2.pa-2(fluid)
       v-layout(column)
         v-flex(v-for="card in cards" :key="card.title" xs12)
-          v-card.ma-2(width="auto" hover)
-            v-img(:src="card.src" height="200px")
-              v-container(fluid pa-2)
-                v-layout
-                  v-flex(xs12 align-end flexbox)
-                    span.headline.white--text(v-text="card.title")
-            span.card-content.headline {{card.content}}
-            v-card-actions
-              v-spacer
-              v-btn(icon)
-                v-icon favorite
-              v-btn(icon)
-                v-icon bookmark
-              v-btn(icon)
-                v-icon share
+          v-card.ma-2.pa-2(width="auto" hover)
+            v-img(:src="card.src" height="80px")
+            span.headline.title.font-weight-regular.black--text.mt-2(v-text="card.title")
 </template>
 
 <script>

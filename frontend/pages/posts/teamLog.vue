@@ -1,6 +1,6 @@
 <template lang="pug">
   div
-    h1.content-title.my-4.font-weight-bold.font-italic Team Log
+    h1.content-title.my-4.font-weight-bold.font-italic.purple--text Team Log
     v-layout(row wrap justify-start)
       v-flex(v-for="card in cards" :key="card.title" xs12)
         v-card.my-3
