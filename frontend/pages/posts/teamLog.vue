@@ -3,7 +3,7 @@
     h1.content-title.my-4.font-weight-bold.font-italic.purple--text Team Log
     v-layout(row wrap justify-start)
       v-flex(v-for="card in cards" :key="card.title" xs12)
-        v-card.my-3
+        v-card.my-3(:to="card.link" nuxt)
           v-img(height="200px" :src="card.src")
             v-container(fill-height fluid)
               v-layout(fill-height)
@@ -11,8 +11,6 @@
           v-card-title
             div
               span.title.font-weight-bold.purple--text.lighten-1 {{card.title}}
-              br
-              span.grey--text Number 10
               br
               span.body-2 {{card.content}}
           v-layout(justify-end)
@@ -51,9 +49,9 @@
         ],
         height: 300,
         cards: [
-          { title: 'Pre-fab homes', src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg', content: 'hoge'},
-          { title: 'Favorite road trips', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', content: 'takkun'},
-          { title: 'Best airlines', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', content: 'ichiki'}
+          { title: 'Pre-fab homes', src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg', content: 'hoge', link: '/posts/teamdetail'},
+          { title: 'Favorite road trips', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', content: 'takkun', link: '/posts/teamdetail'},
+          { title: 'Best airlines', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', content: 'ichiki', link: '/posts/teamdetail'}
         ]
       }
     },

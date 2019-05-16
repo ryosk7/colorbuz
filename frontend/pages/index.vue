@@ -7,7 +7,7 @@
     v-container.pa-0.my-4(fluid grid-list-md)
       v-layout(row wrap justify-start)
         v-flex(v-for="card in cards" :key="card.title" xs12 md4)
-          v-card.ma-2.pa-3(width="auto" height="400px" hover)
+          v-card.ma-2.pa-3(width="auto" height="400px" hover :to="card.link")
             v-img(:src="card.src" height="170px")
             v-card-actions
               v-spacer
@@ -29,25 +29,31 @@
     layout: 'homeLayout',
     data () {
       return {
+        /* carousel list */
         items: [
           {
-            src: 'https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg'
+            src: 'https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg', link: '/#'
           },
           {
-            src: 'https://cdn.vuetifyjs.com/images/carousel/sky.jpg'
+            src: 'https://cdn.vuetifyjs.com/images/carousel/sky.jpg', link: '/#'
           },
           {
-            src: 'https://cdn.vuetifyjs.com/images/carousel/bird.jpg'
+            src: 'https://cdn.vuetifyjs.com/images/carousel/bird.jpg', link: '/#'
           },
           {
-            src: 'https://cdn.vuetifyjs.com/images/carousel/planet.jpg'
+            src: 'https://cdn.vuetifyjs.com/images/carousel/planet.jpg', link: '/#'
           }
         ],
         height: 300,
+
+        /* card list */
         cards: [
-          { title: 'Pre-fab homes', src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg', content: 'hoge'},
-          { title: 'Favorite road trips', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', content: 'takkun'},
-          { title: 'Best airlines', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', content: 'ichiki'}
+          { title: 'Pre-fab homes', src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg', content: 'hoge', link: '/posts/teamdetail'},
+          { title: 'Favorite road trips', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', content: 'takkun', link: '/posts/teamdetail'},
+          { title: 'Best airlines', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', content: 'ichiki', link: '/posts/teamdetail'},
+          { title: 'Pre-fab homes', src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg', content: 'hoge', link: '/posts/teamdetail'},
+          { title: 'Favorite road trips', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', content: 'takkun', link: '/posts/teamdetail'},
+          { title: 'Best airlines', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', content: 'ichiki', link: '/posts/teamdetail'},
         ]
       }
     },
@@ -56,36 +62,3 @@
     }
   }
 </script>
-
-<style>
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.content-title {
-  font-size: 4em
-}
-
-.title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
-</style>
