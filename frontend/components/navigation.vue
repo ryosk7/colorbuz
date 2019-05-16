@@ -1,11 +1,12 @@
 <template lang="pug">
   v-toolbar(dense fixed)
-    v-toolbar-title colorbuz
+    v-toolbar-title(to="/") 
+      n-link.toolbar-title.font-weight-bold.display-1(to="/") colorbuz
     v-spacer
     v-toolbar-items.hidden-sm-and-down
-      v-btn(flat) Hot This Week
-      v-btn(flat) Team Log
-      v-btn(flat) What We Do?
+      v-btn(to="/" flat) Hot This Week
+      v-btn(to="/posts/teamlog" flat) Team Log
+      v-btn(to="/#" flat) What We Do?
 </template>
 
 <script>
@@ -18,3 +19,10 @@
     }
   }
 </script>
+
+<style>
+.toolbar-title{
+  color: #191414; /* Spotify black color */
+  text-decoration: none;
+}
+</style>

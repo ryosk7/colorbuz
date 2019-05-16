@@ -4,7 +4,7 @@
     v-container.mt-2.mx-2.pa-2(fluid)
       v-layout(column)
         v-flex(v-for="card in cards" :key="card.title" xs12)
-          v-card.ma-2.pa-2(width="auto" hover)
+          v-card.ma-2.pa-2(width="auto" hover :to="card.link")
             v-img(:src="card.src" height="80px")
             span.headline.title.font-weight-regular.black--text.mt-2(v-text="card.title")
 </template>
@@ -14,9 +14,9 @@
     data () {
       return {
         cards: [
-          { title: 'Pre-fab homes', src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg', content: 'hoge'},
-          { title: 'Favorite road trips', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', content: 'takkun'},
-          { title: 'Best airlines', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', content: 'ichiki'}
+          { title: 'Pre-fab homes', src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg', content: 'hoge', link: '/posts/teamdetail'},
+          { title: 'Favorite road trips', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', content: 'takkun', link: '/posts/teamdetail'},
+          { title: 'Best airlines', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', content: 'ichiki', link: '/posts/teamdetail'}
         ]
       }
     },
