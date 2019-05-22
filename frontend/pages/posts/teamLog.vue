@@ -2,17 +2,17 @@
   div
     h1.content-title.my-4.font-weight-bold.font-italic.purple--text Team Log
     v-layout(row wrap justify-start)
-      v-flex(v-for="card in cards" :key="card.title" xs12)
-        v-card.my-3(:to="card.link" nuxt)
-          v-img(height="200px" :src="card.src")
+      v-flex(v-for="post in posts" :key="post.title" xs12)
+        v-card.my-3(:to="post.link" nuxt)
+          v-img(height="200px" :src="post.thumbnail")
             v-container(fill-height fluid)
               v-layout(fill-height)
                 v-flex(xs12 align-end flexbox)
           v-card-title
             div
-              span.title.font-weight-bold.purple--text.lighten-1 {{card.title}}
+              span.title.font-weight-bold.purple--text.lighten-1 {{post.title}}
               br
-              span.body-2 {{card.content}}
+              span.body-2 {{post.content}}
           v-layout(justify-end)
             v-flex(xs4 offset-xs8)
               v-card-actions
@@ -33,27 +33,17 @@
   export default {
     data () {
       return {
-        items: [
-          {
-            src: 'https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg'
-          },
-          {
-            src: 'https://cdn.vuetifyjs.com/images/carousel/sky.jpg'
-          },
-          {
-            src: 'https://cdn.vuetifyjs.com/images/carousel/bird.jpg'
-          },
-          {
-            src: 'https://cdn.vuetifyjs.com/images/carousel/planet.jpg'
-          }
-        ],
         height: 300,
-        cards: [
-          { title: 'Pre-fab homes', src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg', content: 'hoge', link: '/posts/teamdetail'},
-          { title: 'Favorite road trips', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', content: 'takkun', link: '/posts/teamdetail'},
-          { title: 'Best airlines', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', content: 'ichiki', link: '/posts/teamdetail'}
-        ]
+        posts: []
       }
+    },
+    methods: {
+      async postsFunction() {
+        this.posts = await this.$axios.$get('/posts')
+      }
+    },
+    mounted () {
+      this.postsFunction()
     },
     props: {
       source: String

@@ -3,22 +3,26 @@
     h1.content-title.mt-5.mx-3.font-weight-bold.font-italic.pink--text.darken-4 Hots
     v-container.mt-2.mx-2.pa-2(fluid)
       v-layout(column)
-        v-flex(v-for="card in cards" :key="card.title" xs12)
-          v-card.ma-2.pa-2(width="auto" hover :to="card.link")
-            v-img(:src="card.src" height="80px")
-            span.headline.title.font-weight-regular.black--text.mt-2(v-text="card.title")
+        v-flex(v-for="post in posts" :key="post.title" xs12)
+          v-card.ma-2.pa-2(width="auto" hover :to="post.link")
+            v-img(:src="post.thumbnail" height="80px")
+            span.headline.title.font-weight-regular.black--text.mt-2(v-text="post.title")
 </template>
 
 <script>
   export default {
     data () {
       return {
-        cards: [
-          { title: 'Pre-fab homes', src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg', content: 'hoge', link: '/posts/teamdetail'},
-          { title: 'Favorite road trips', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', content: 'takkun', link: '/posts/teamdetail'},
-          { title: 'Best airlines', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', content: 'ichiki', link: '/posts/teamdetail'}
-        ]
+        posts: []
       }
+    },
+    methods: {
+      async postsFunction() {
+        this.posts = await this.$axios.$get('/posts')
+      }
+    },
+    mounted () {
+      this.postsFunction()
     },
     props: {
       source: String

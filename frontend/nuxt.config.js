@@ -15,8 +15,15 @@ module.exports = {
   },
   modules: [
     '@nuxtjs/vuetify',
-    '@nuxt-tui/editor'
+    '@nuxt-tui/editor',
+    '@nuxtjs/axios'
   ],
+
+  axios: {
+    host: 'localhost',
+    port: 3000,
+    prefix: '/api'
+  },
 
   vuetify: {
     // Vuetify の設定はここに書く
