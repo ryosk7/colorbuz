@@ -6,9 +6,9 @@
     span.font-italic.pink--text.darken-4.subheading.ml-3.font-weight-medium いま、アツい "Start Up" をお届け！
     v-container.pa-0.my-4(fluid grid-list-md)
       v-layout(row wrap justify-start)
-        v-flex(v-for="card in cards" :key="card.title" xs12 md4)
-          v-card.ma-2.pa-3(width="auto" height="400px" hover :to="card.link")
-            v-img(:src="card.src" height="170px")
+        v-flex(v-for="post in posts" :key="post.title" xs12 md4)
+          v-card.ma-2.pa-3(width="auto" height="400px" hover)
+            v-img(:src="post.thumbnail" height="170px")
             v-card-actions
               v-spacer
               v-btn(icon)
@@ -18,9 +18,9 @@
               v-btn(icon)
                 v-icon share
             hr.grey--text.lighten-2
-            span.font-weight-bold.headline.black--text(v-text="card.title")
+            span.font-weight-bold.headline.black--text(v-text="post.title")
             br
-            span.card-content.body-2.grey--text.darken-4 {{card.content}}
+            span.card-content.body-2.grey--text.darken-4 {{post.content}}
 </template>
 
 <script>
@@ -47,15 +47,24 @@
         height: 300,
 
         /* card list */
-        cards: [
-          { title: 'Pre-fab homes', src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg', content: 'hoge', link: '/posts/teamdetail'},
-          { title: 'Favorite road trips', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', content: 'takkun', link: '/posts/teamdetail'},
-          { title: 'Best airlines', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', content: 'ichiki', link: '/posts/teamdetail'},
-          { title: 'Pre-fab homes', src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg', content: 'hoge', link: '/posts/teamdetail'},
-          { title: 'Favorite road trips', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', content: 'takkun', link: '/posts/teamdetail'},
-          { title: 'Best airlines', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', content: 'ichiki', link: '/posts/teamdetail'},
-        ]
+        // cards: [
+        //   { title: 'Pre-fab homes', src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg', content: 'hoge', link: '/posts/teamdetail'},
+        //   { title: 'Favorite road trips', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', content: 'takkun', link: '/posts/teamdetail'},
+        //   { title: 'Best airlines', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', content: 'ichiki', link: '/posts/teamdetail'},
+        //   { title: 'Pre-fab homes', src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg', content: 'hoge', link: '/posts/teamdetail'},
+        //   { title: 'Favorite road trips', src: 'https://cdn.vuetifyjs.com/images/cards/road.jpg', content: 'takkun', link: '/posts/teamdetail'},
+        //   { title: 'Best airlines', src: 'https://cdn.vuetifyjs.com/images/cards/plane.jpg', content: 'ichiki', link: '/posts/teamdetail'},
+        // ]
+        posts: []
       }
+    },
+    methods: {
+      async postsFunction() {
+        this.posts = await this.$axios.$get('/posts')
+      }
+    },
+    mounted () {
+      this.postsFunction()
     },
     props: {
       source: String
