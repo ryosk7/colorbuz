@@ -25,6 +25,14 @@ module.exports = {
     prefix: '/api'
   },
 
+  auth: {
+    endpoints: {
+      login: { url: '/users/sign_in' },
+      logout: { url: '/users/sign_out', method: 'delete' },
+      user: { url: '/users/current' }
+    }
+  },
+
   vuetify: {
     // Vuetify の設定はここに書く
     theme: {

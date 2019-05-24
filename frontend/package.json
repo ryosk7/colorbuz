@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@nuxt-tui/editor": "^1.0.0-alpha.3",
+    "@nuxtjs/auth": "^4.5.3",
     "@nuxtjs/axios": "^5.4.2",
     "@nuxtjs/vuetify": "^0.5.5",
     "nuxt": "^2.0.0",
