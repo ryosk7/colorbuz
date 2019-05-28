@@ -7,17 +7,26 @@ class PostsController < ApplicationController
   def show
   end
 
-  def new
-  end
-
-  def edit
-  end
-
   def create
+    @post = Post.new(post_params)
+    if @post.save
+      render json: create
+    end
+  end
+
+  def update
   end
 
   def destroy
   end
+
+  private
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def post_params
+      params.fetch(:post, {}).permit(
+          :title, :thumbnail, :content, :user_id, :team_id
+      )
+    end
 
   # t.string "title"
   # t.text "thumbnail"

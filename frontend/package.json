@@ -4,6 +4,11 @@
   "description": "起業家密着サービス",
   "author": "Ryosuke Uchida",
   "private": true,
+  "proxy": {
+    "/*": {
+      "target": "http://localhost:8000"
+    }
+  },
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
