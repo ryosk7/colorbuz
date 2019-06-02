@@ -28,7 +28,7 @@
     methods: {
       createPost: function () {
         if (!this.newPost) return;
-        axios.post('localhost:3000/api/posts', { post: { name: this.newPost } }).then((response) => {
+        axios.post('http://localhost:3000/api/posts', { post: { name: this.newPost } }).then((response) => {
           this.posts.unshift(response.data.post);
           this.newPost = '';
         }, (error) => {
