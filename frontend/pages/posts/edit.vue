@@ -30,6 +30,7 @@
             content: this.content
           } })
           .then((response) => {
+            console.log(response.data);
           (this.post = response.data)
         }, (error) => {
           console.log(error);
