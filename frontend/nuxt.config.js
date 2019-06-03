@@ -16,13 +16,23 @@ module.exports = {
   modules: [
     '@nuxtjs/vuetify',
     '@nuxt-tui/editor',
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/proxy'
   ],
 
   axios: {
     host: 'localhost',
     port: 3000,
     prefix: '/api'
+  },
+
+  proxy: {
+    '/api': {
+      target: 'http://localhost:8000',
+      pathRewrite: {
+        '^/api': '/'
+      }
+    }
   },
 
   vuetify: {
