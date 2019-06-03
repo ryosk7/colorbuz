@@ -8,29 +8,29 @@
         v-flex(xs4 md2)
           v-btn(v-on:click="createPost" color="info") POST
     v-form
-      v-text-field(label="Title" single-line full-width hide-details)
+      v-text-field(v-model="title" label="Title" single-line full-width hide-details)
       v-divider
-      v-textarea(v-model="newPost" label="Content" counter maxlength="1200" full-width single-line height="460px")
+      v-textarea(v-model="content" label="Content" counter maxlength="1200" full-width single-line height="460px")
 </template>
 
 <script>
-  import axios from 'axios';
-
   export default {
     layout: 'editorLayout',
     data () {
       return {
+        title: '',
         content: '',
-        posts: [],
-        newPost: ''
       }
     },
     methods: {
       createPost: function () {
-        if (!this.newPost) return;
-        axios.post('http://localhost:3000/api/posts', { post: { name: this.newPost } }).then((response) => {
-          this.posts.unshift(response.data.post);
-          this.newPost = '';
+        this.$axios.post('http://localhost:3000/api/posts', { 
+          post: { 
+            title: this.title,
+            content: this.content
+          } })
+          .then((response) => {
+          (this.post = response.data)
         }, (error) => {
           console.log(error);
         });
