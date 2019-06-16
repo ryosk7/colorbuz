@@ -1,31 +1,10 @@
 version: '3'
 services:
-  db:
-    image: mysql
-    command: mysqld --default-authentication-plugin=mysql_native_password
-    environment:
-      MYSQL_USER: root
-      MYSQL_ROOT_PASSWORD: password
-    ports:
-      - '3316:3306'
-    volumes:
-      - ./db/mysql/volumes:/var/lib/mysql
-
-  web:
-    build: .
-    command: /bin/sh -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
-    volumes:
-      - ./web:/web
-    ports:
-      - "3000:3000"
-    depends_on:
-      - db
-
   frontend:
     build: ./frontend
     tty: true
     ports:
-      - 8000:3000
+      - 3000:3000
     command: yarn run dev
     volumes:
       - ./frontend:/myapp/frontend
