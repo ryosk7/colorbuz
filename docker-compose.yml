@@ -5,6 +5,6 @@ services:
     tty: true
     ports:
       - 3000:3000
-    command: yarn run dev
+    command: npm run dev
     volumes:
       - ./frontend:/myapp/frontend
