@@ -8,6 +8,3 @@ services:
     command: yarn run dev
     volumes:
       - ./frontend:/myapp/frontend
-    depends_on:
-      - web
-
