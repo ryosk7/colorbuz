@@ -63,6 +63,7 @@
       }
     },
     mounted () {
+      console.log("FIREBASE_API_KEY=>", process.env.FIREBASE_API_KEY)
       this.postsFunction()
     },
     props: {
