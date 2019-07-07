@@ -21,8 +21,10 @@
 
 <script>
   import HeaderNav from '~/components/navigation'
+  import firebase from '@/plugins/firebase'
   export default {
     data () {
+      console.log(`id`,this.$route.params.id)
       return {
         items: [
           {
@@ -30,13 +32,30 @@
           },
         ],
         height: 300,
-        cards: [
-          { title: 'Pre-fab homes', src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg', content: 'hoge'},
-        ]
+        cards: []
       }
     },
-    props: {
-      source: String
+    methods: {
+      async postsFunction() {
+        //this.posts = await this.$axios.$get('/posts')
+
+        firebase.firestore().collection("posts").doc(this.$route.params.id).get().then((doc) => {
+          if (doc.exists) {
+            console.log("firebase_get_id: ", doc.id);
+            console.log("title", doc.data().title);
+            console.log("content", doc.data().content);
+            this.cards = [
+              { title: doc.data().title, src: 'https://cdn.vuetifyjs.com/images/cards/house.jpg', content: doc.data().content},
+            ]
+          } else {
+            // doc.data() will be undefined in this case
+            console.log("No such document!");
+          }
+        })
+      }
+    },
+    mounted(){
+      this.postsFunction()
     }
   }
 </script>

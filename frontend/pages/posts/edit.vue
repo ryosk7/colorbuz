@@ -14,6 +14,7 @@
 </template>
 
 <script>
+  import firebase from '@/plugins/firebase'
   export default {
     layout: 'editorLayout',
     data () {
@@ -24,16 +25,16 @@
     },
     methods: {
       createPost: function () {
-        this.$axios.post('http://localhost:3000/api/posts', { 
-          post: { 
-            title: this.title,
+        
+        firebase.firestore().collection("posts").add({
+          title: this.title,
             content: this.content
-          } })
-          .then((response) => {
-            console.log(response.data);
-          (this.post = response.data)
-        }, (error) => {
-          console.log(error);
+        })
+        .then(function(docRef) {
+            console.log("Document written with ID: ", docRef.id);
+        })
+        .catch(function(error) {
+            console.error("Error adding document: ", error);
         });
       },
     }

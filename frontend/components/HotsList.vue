@@ -18,7 +18,7 @@
     },
     methods: {
       async postsFunction() {
-        this.posts = await this.$axios.$get('/posts')
+        //this.posts = await this.$axios.$get('/posts')
       }
     },
     mounted () {

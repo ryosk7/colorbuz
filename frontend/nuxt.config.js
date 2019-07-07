@@ -1,3 +1,4 @@
+require('dotenv').config()
 module.exports = {
   /*
   ** Headers of the page
@@ -14,7 +15,13 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
+
+  plugins: [
+    '@/plugins/firebase'
+  ],
+
   modules: [
+    '@nuxtjs/dotenv',
     '@nuxtjs/vuetify',
     '@nuxt-tui/editor',
     '@nuxtjs/axios',
