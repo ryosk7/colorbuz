@@ -28,10 +28,11 @@
         
         firebase.firestore().collection("posts").add({
           title: this.title,
-            content: this.content
+          content: this.content
         })
-        .then(function(docRef) {
+        .then((docRef) => {
             console.log("Document written with ID: ", docRef.id);
+            this.$router.push({ path: `/posts/teamDetail/${docRef.id}` })
         })
         .catch(function(error) {
             console.error("Error adding document: ", error);
