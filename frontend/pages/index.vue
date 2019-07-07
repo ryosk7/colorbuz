@@ -57,7 +57,7 @@
         firebase.firestore().collection("posts").get().then((querySnapshot) => {
           querySnapshot.forEach((doc) => {
             console.log(`${doc.id} => ${doc.data().title}`);
-            this.posts = [{id: doc.id, data: doc.data()}];
+            this.posts.push({id: doc.id, data: doc.data()});
           });
         });
       }
