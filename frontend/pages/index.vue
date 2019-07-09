@@ -8,7 +8,7 @@
       v-layout(row wrap justify-start)
         v-flex(v-for="post in posts" :key="post.data.title" xs12 md4)
           nuxt-link(:to="`posts/teamDetail/${post.id}`")
-            v-card.ma-2.pa-3(width="auto" height="400px" hover)
+            v-card.ma-2.pa-3(width="auto" height="400px")
               v-img(:src="post.data.thumbnail" height="170px")
               v-card-actions
                 v-spacer
