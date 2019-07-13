@@ -24,14 +24,18 @@
       return {
         title: '',
         content: '',
-        images: "",
+        thumbnail: '',
       }
     },
     methods: {
       createPost: function () {
-        let storage = firebase.storage().ref().child(this.images[0].name).put(this.images[0]).then(function(snapshot) {
-          console.log('Uploaded a blob or file!');
-        });
+        uuidFileName = uuid();
+        let storage = firebase.storage().ref()
+                              .child(uuidFileName)
+                              .put(this.thumbnail[0])
+                              .then(function(snapshot) {
+                                console.log('FILE NAME => uuid: ',this.thumbnail[0].name,'アップロード完了');
+                              });
         firebase.firestore().collection("posts").add({
           title: this.title,
           content: this.content
@@ -43,35 +47,10 @@
             console.error("Error adding document: ", error);
         });
       },
-      detectFiles(e) {
-        // アップロード対象は1件のみとする
-        const file = (e.target.files || e.dataTransfer.files)[0]
-        if (file) {
-          const fileName = uuid()
-
-          this.$store
-            .dispatch('personas/uploadImage', {
-              name: fileName,
-              file: file
-            })
-            .then(url => {
-              // アップロード完了処理 (ローカルメンバに保存したり)
-              this.fileName = fileName
-              this.imageUrl = url
-            })
-        }
-      },
       fileUpload(){
         // let storage = firebase.storage();
         this.images = event.target.files;
         console.log(this.images);
-
-        // const fr = new FileReader();
-        // fr.readAsDataURL(files[0]);
-        // fr.addEventListener("load", () => {
-        //   this.imageUrl = fr.result;
-        //   this.imageFile = files[0]; // this is an image file that can be sent to server...
-        // });
       }
     }
   }
