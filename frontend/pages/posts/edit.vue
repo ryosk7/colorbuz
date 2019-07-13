@@ -29,7 +29,7 @@
     },
     methods: {
       createPost: function () {
-        uuidFileName = uuid();
+        let uuidFileName = uuid();
         let storage = firebase.storage().ref()
                               .child(uuidFileName)
                               .put(this.thumbnail[0])
@@ -38,7 +38,8 @@
                               });
         firebase.firestore().collection("posts").add({
           title: this.title,
-          content: this.content
+          content: this.content,
+          // thumbnail: uuidFileName
         })
         .then(function(docRef) {
             console.log("Document written with ID: ", docRef.id);
@@ -49,8 +50,8 @@
       },
       fileUpload(){
         // let storage = firebase.storage();
-        this.images = event.target.files;
-        console.log(this.images);
+        this.thumbnail = event.target.files;
+        console.log(this.thumbnail);
       }
     }
   }
