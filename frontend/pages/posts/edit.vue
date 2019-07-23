@@ -34,12 +34,13 @@
                               .child(uuidFileName)
                               .put(this.thumbnail[0])
                               .then(function(snapshot) {
-                                console.log('FILE NAME => uuid: ',this.thumbnail[0].name,'アップロード完了');
+                                console.log('FILE NAME => uuid: ',this.thumbnail[0].name, 'アップロード完了');
                               });
         firebase.firestore().collection("posts").add({
           title: this.title,
           content: this.content,
-          // thumbnail: uuidFileName
+          thumbnail: uuidFileName,
+          thumbnailName: this.thumbnail[0].name
         })
         .then(function(docRef) {
             console.log("Document written with ID: ", docRef.id);
@@ -49,7 +50,6 @@
         });
       },
       fileUpload(){
-        // let storage = firebase.storage();
         this.thumbnail = event.target.files;
         console.log(this.thumbnail);
       }
