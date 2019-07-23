@@ -15,7 +15,7 @@
       return {
         items: [
           { title: 'Home', icon: 'dashboard', link: '/' },
-          { title: 'Edit', icon: 'edit', link: '/posts/edit' },
+          { title: 'New', icon: 'edit', link: '/posts/new' },
           { title: 'Team', icon: 'question_answer', link: '/posts/teamlog' }
         ],
         right: null

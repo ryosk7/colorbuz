@@ -7,6 +7,10 @@
       v-btn(to="/" flat) Hot This Week
       v-btn(to="/posts/teamlog" flat) Team Log
       v-btn(to="/#" flat) What We Do?
+    v-toolbar-side-icon.hidden-md-and-up
+      v-btn(to="/" flat) Hot This Week
+      v-btn(to="/posts/teamlog" flat) Team Log
+      v-btn(to="/#" flat) What We Do?
 </template>
 
 <script>

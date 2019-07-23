@@ -42,8 +42,9 @@
           thumbnail: uuidFileName,
           thumbnailName: this.thumbnail[0].name
         })
-        .then(function(docRef) {
+        .then((docRef) => {
             console.log("Document written with ID: ", docRef.id);
+            this.$router.push({ path: `/posts/teamDetail/${docRef.id}` })
         })
         .catch(function(error) {
             console.error("Error adding document: ", error);
