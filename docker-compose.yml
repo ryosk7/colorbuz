@@ -5,6 +5,8 @@ services:
     tty: true
     ports:
       - 3000:3000
+      - 9005:9005
     command: npm run dev
+    FIREBASE_TOKEN: '${FIREBASE_TOKEN}'
     volumes:
       - ./frontend:/myapp/frontend
