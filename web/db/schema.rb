@@ -62,24 +62,6 @@ ActiveRecord::Schema.define(version: 20171217081251) do
     t.index ["following_id"], name: "index_relationships_on_following_id"
   end
 
-  create_table "supporters", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "post_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["post_id"], name: "index_supporters_on_post_id"
-    t.index ["user_id"], name: "index_supporters_on_user_id"
-  end
-
-  create_table "supports", force: :cascade do |t|
-    t.integer "user_id_id"
-    t.integer "post_id_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["post_id_id"], name: "index_supports_on_post_id_id"
-    t.index ["user_id_id"], name: "index_supports_on_user_id_id"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
