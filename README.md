@@ -11,6 +11,6 @@ Social media and service for startups.
 ```sh
 $ docker-compose build
 $ docker-compose up
-$ docker-compose web rails db:migrate
+$ docker-compose exec web rails db:migrate
 $ open http://localhost:3000
 ```
