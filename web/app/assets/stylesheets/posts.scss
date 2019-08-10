@@ -1,0 +1,735 @@
+.show-title {
+  font-size: 70px;
+  margin-bottom: 80px;
+  color: #3ac162;
+}
+
+.show-content {
+  font-size: 40px;
+  margin-bottom: 40px;
+  word-wrap: break-word;
+  color: #918e8e;
+}
+
+.username {
+  margin-left: 10px;
+}
+
+.card {
+  height: 400px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  background-position: center;
+  color: white;
+  position: relative;
+}
+.card-user {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  width: auto;
+  border-radius: 50%;
+}
+.card-category {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+.card-description {
+  position: absolute;
+  top: 0px;
+  left: 10px;
+  word-wrap: break-word;
+  white-space: normal;
+  display: block;
+  h1 {
+    font-size: 50px;
+  }
+}
+.card-description h2 {
+  font-size: 24px;
+}
+.card-description p {
+  font-size: 14px;
+  opacity: 0.7;
+  font-weight: lighter;
+}
+.card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+  background: black;
+  opacity: 0;
+}
+.card-link:hover {
+  opacity: 0.1;
+}
+.card-content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  word-wrap: break-word;
+  width: 450px;
+}
+
+
+
+.ckeditor {
+  width: 100%;
+  height: 500px;
+}
+
+.form-error {
+  color: red;
+  font-size: 20px;
+}
+
+.first_iframe {
+  text-align: center;
+}
+
+.btn-medium {
+  color: #999999;
+  border: 1px solid #999999;
+  padding: 10px 15px;
+  margin-right: 15px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+}
+.btn-medium:hover {
+  opacity: 1;
+  text-decoration: none;
+  color: #999999;
+}
+
+.post-note {
+  font-size: 18px;
+  font-weight: bold;
+  color: #5383da;
+}
+
+.btn-submit {
+  margin-top: 30px;
+  background-color: #00bd69;
+	-moz-border-radius:28px;
+	-webkit-border-radius:28px;
+	border-radius:28px;
+	border:1px solid #18ab29;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:20px;
+	padding:16px 31px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+
+.btn-submit:hover {
+  background-color: #28a06b;
+}
+
+.btn-submit:active {
+  position:relative;
+	top:1px;
+}
+
+/* パソコン */
+@media only screen and (min-width: 750px) {
+  .sp {
+    display: none !important;
+  }
+  .pc {
+    display: block !important;
+
+    .keep-line {
+      background-color: #edf7e1;
+      margin: 20px 0;
+      padding: 30px 0;
+      .keep-icon {
+        color: #00bd69;
+      }
+      .unkeep-icon {
+        color: #797676;
+      }
+      .keep-btn {
+        text-align: center;
+      }
+      .keeper-count {
+        text-align: center;
+        font-size: 60px;
+        color: #f8b733;
+      }
+      .keeper-image {
+        text-align: center;
+        .avatar-image-keeper {
+          width: 123px;
+          border-radius: 50%;
+          margin: 0 23px;
+        }
+      }
+    }
+
+
+    .signup-for-nonlogged {
+      width: 100%;
+      height: 50px;
+      background-color: #249ebd;
+      text-align: center;
+      margin-top: 30px;
+      .signup {
+        font-size: 30px;
+        color: white;
+        padding-top: 5px;
+        p {
+          margin-top: 10px;
+        }
+      }
+    }
+
+    .login-session {
+      font-size: 70px;
+      color: #3ac162;
+      text-align: center;
+      margin: 30px;
+    }
+
+    .login-session-discription {
+      font-size: 20px;
+      text-align: center;
+      color: #7a7777;
+      margin: 30px;
+    }
+
+    .posts-new {
+      .form-heading {
+        color: #797676;
+      }
+    }
+
+    .form-article {
+      height: 350px;
+    }
+
+    .form-comment {
+      height: 130px;
+      font-size: 35px;
+    }
+
+    .comment-note {
+      font-size: 26px;
+      font-weight: bold;
+      color: #5383da;
+    }
+
+    .comment-content {
+      font-size: 33px;
+      word-wrap: break-word;
+      color: #918e8e;
+    }
+
+    .user-info {
+      text-align: center;
+      .comment-user {
+        font-size: 20px;
+        color: #918e8e;
+      }
+    }
+
+    .btn-unfollow {
+      width: 200px;
+      height: 50px;
+      font-size: 27px;
+      margin-bottom: 30px;
+    }
+
+    .btn-primary {
+      color: #fff;
+      width: 200px;
+      height: 50px;
+      font-size: 27px;
+      background-color: #337ab7;
+      border-color: #2e6da4;
+      margin-bottom: 30px;
+    }
+
+    .user-index-name {
+      a {
+        font-size: 40px;
+      }
+    }
+
+    .avatar-image-show {
+      border-radius: 50%;
+      margin-left: 150px;
+      width: 100px;
+    }
+
+    .avatar-image {
+      width: 50px;
+      border-radius: 50%;
+    }
+
+    .avatar-image-index {
+      border-radius: 50%;
+      margin-right: 30px;
+    }
+
+
+
+    .user-index {
+      font-size: 70px;
+    }
+    .card-description {
+      h1 {
+        font-size: 40px;
+      }
+    }
+    .card-user {
+      p {
+        font-size: 20px;
+      }
+      .avatar-image-mini {
+        border-radius: 50%;
+        width: 50px;
+        height: auto;
+      }
+    }
+  }
+}
+/* スマートフォン */
+@media only screen and (max-width: 1000px) {
+  .pc {
+    display: none !important;
+  }
+  .sp {
+    display: block !important;
+
+    .btn-position {
+      text-align: center;
+      margin: 20px 0 40px 0;
+    }
+
+    .comment-btn-submit {
+      margin-top: 30px;
+      background-color: #00bd69;
+      -moz-border-radius: 28px;
+      -webkit-border-radius: 28px;
+      border-radius: 28px;
+      border: 1px solid #18ab29;
+      display: inline-block;
+      cursor: pointer;
+      color: #ffffff;
+      font-family: Arial;
+      font-size: 45px;
+      padding: 16px 31px;
+      text-decoration: none;
+      text-shadow: 0px 1px 0px #2f6627;
+    }
+
+    .comment-title {
+      font-size: 70px;
+      color: #3ac162;
+      text-align: center;
+    }
+
+    .comment-note {
+      font-size: 40px;
+      text-align: center;
+      color: #5383da;
+    }
+
+    .form-comment-sp {
+      width: 100%;
+      font-size: 48px;
+      height: 200px;
+      border-color: #578bd8;
+      font-weight: bold;
+    }
+
+    .sp-container {
+      .comment-hr {
+        border-width: 7px 0 0 0;
+      }
+
+      .comment-content {
+        font-size: 50px;
+        word-wrap: break-word;
+        color: #918e8e;
+      }
+
+      .sp-comment-avatar-image {
+        margin-left: 60px;
+        border-radius: 50%;
+      }
+    }
+
+    .non-logged-user-header {
+      text-align: right;
+      margin-bottom: 20px;
+      .ideas-for-non {
+        color: #d5d4d4;
+        font-size: 50px;
+      }
+    }
+
+    .signup-for-nonlogged {
+      width: 100%;
+      height: 80px;
+      background-color: #249ebd;
+      text-align: center;
+      margin-top: 30px;
+      .signup {
+        font-size: 50px;
+        color: white;
+        padding-top: 5px;
+        p {
+          margin-top: 10px;
+        }
+      }
+    }
+
+    .user-follow {
+      font-size: 113px;
+      text-align: center;
+      margin: 37px 0;
+      color: #00bd69;
+    }
+
+    .btn-unfollow {
+      width: 300px;
+      height: 72px;
+      font-size: 40px;
+    }
+
+    .btn-primary {
+      color: #fff;
+      width: 300px;
+      height: 72px;
+      font-size: 40px;
+      background-color: #337ab7;
+      border-color: #2e6da4;
+    }
+
+    .posts-index {
+      .sp-container {
+        margin: 60px 30px;
+      }
+    }
+
+    .posts-new {
+      .sp-container {
+        margin: 0 20px 0 20px;
+        .show-title {
+          font-size: 164px;
+        }
+        .show-content {
+          font-size: 100px;
+          margin-bottom: 40px;
+          word-wrap: break-word;
+          color: #918e8e;
+        }
+        a {
+          font-size: 50px;
+          text-decoration: none !important;
+          color: #7a7777;
+        }
+        .btn-list {
+          text-align: center;
+          .btn-edit {
+            margin-right: 40px;
+          }
+          .btn-delete {
+            margin-left: 40px;
+          }
+        }
+      }
+    }
+
+    .sp-container {
+      margin: 300px 10px 0 10px;
+      .login-session {
+        font-size: 112px;
+        margin: 288px 0 200px 0;
+      }
+      .login-session-discription {
+        font-size: 45px;
+        text-align: center;
+        color: #7a7777;
+        margin: 30px 0 100px 0;
+      }
+      .btn-facebook.btn.btn-lg.btn-block {
+        color: white;
+        background-color: #3B5998;
+        font-size: 20px;
+        width: 550px;
+        margin: 0 auto;
+        border-radius: 20px;
+      }
+      .fa.fa-facebook.fa-2x {
+        color: white;
+        padding: 20px 15px;
+        height: auto;
+        border-radius: 10px;
+        font-size: 50px;
+        font-weight: bold;
+        background: #3B5998;
+        transition: background 0.3s ease;
+      }
+      .fa.fa-facebook.fa-2x:hover {
+        opacity: 1;
+        background: #3B5998;
+        text-decoration: none;
+        color: white;
+      }
+    }
+
+    .footer-discription {
+      font-size: 39px;
+      a {
+        font-size: 39px;
+      }
+    }
+    .footer-discription-jiro {
+      text-align: center;
+      font-size: 30px;
+    }
+
+    .banner {
+      .sp-banner-content {
+        .sp-container {
+          padding-top: 68px;
+          margin: 0px 20px;
+          h1 {
+            font-size: 109px;
+            font-weight: bold;
+            margin-top: 0px;
+          }
+          p {
+            font-size: 60px;
+            margin: 47px 10px;
+          }
+        }
+      }
+    }
+
+    .sp-banner-about-1 {
+      .sp-container {
+        margin: 0px 20px 0px 20px;
+        h1 {
+          font-size: 109px;
+          margin-top: 144px;
+          color: #00bd69;
+        }
+        h2 {
+          margin-top: 54px;
+          font-size: 60px;
+          color: #7a7979;
+        }
+        .sng-info {
+          width: 890px;
+          height: auto;
+          margin: 0 auto;
+        }
+      }
+    }
+
+    .sp-banner-about-2 {
+      .sp-container {
+        margin: 0px 20px 0px 20px;
+        h1 {
+          font-size: 109px;
+          margin-top: 144px;
+          color: #00bd69;
+        }
+        h2 {
+          margin: 81px 0;
+          font-size: 60px;
+          color: #7a7979;
+        }
+        .sng-ad {
+          width: 890px;
+          height: auto;
+          margin-top: 112px;
+          padding-left: 54px;
+        }
+      }
+    }
+
+    .btn-treehouse {
+      color: white;
+      padding: 24px 21px;
+      border-radius: 50px;
+      font-size: 61px;
+      font-weight: bold;
+      background: #6AD58B;
+      transition: background 0.3s ease;
+    }
+
+    .navbar-default {
+      padding-bottom: 0px;
+      border-color: #4b390a;
+      .navbar-link {
+        color: #d5d4d4;
+        font-size: 50px;
+        margin-top: 60px;
+      }
+      .function {
+        border-width: none;
+        background-color: #4b390a;
+        border-color: #4b390a;
+        border-style: solid;
+        .icon-list {
+          border-width: none;
+          text-align: center;
+          padding-left: 179px;
+          margin-bottom: 0px;
+          border-color: #4b390a;
+          li {
+            margin: 30px;
+            display: inline-block;
+            border-color: #4b390a;
+            display: inline-flex;
+            .glyphicon {
+              font-size: 60px;
+              justify-content: space-between;
+            }
+            .glyphicon-list {
+              color: white;
+              margin-right: 40px;
+            }
+            .glyphicon-edit {
+              color: white;
+              margin-right: 40px;
+            }
+            .glyphicon-user {
+              color: white;
+              margin-right: 40px;
+            }
+          }
+        }
+      }
+      .container-fluid {
+        height: 160px;
+        background-color: #4b390a;
+        border-color: #4b390a;
+        .avatar-image {
+          margin: 15px 30px 10px 0;
+          width: 130px;
+        }
+        .dropdown-menu {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+    .sp-container {
+      margin: 60px 30px;
+    }
+    .user-show {
+      font-size: 100px;
+      text-align: center;
+      color: #3ac162;
+      .sp-container {
+        margin: 60px 30px;
+      }
+    }
+    .navbar-brand {
+      margin-top: 50px;
+      font-size: 100px;
+      color: #00bd69;
+      font-weight: bold;
+    }
+    .user-index {
+      font-size: 169px;
+    }
+    .card-description {
+      h1 {
+        font-size: 108px;
+      }
+    }
+    .card-user {
+      p {
+        font-size: 57px;
+      }
+      .avatar-image-mini {
+        border-radius: 50%;
+        width: 100px;
+        height: auto;
+      }
+    }
+    .user-index-name {
+      .username {
+        font-size: 70px;
+      }
+      .avatar-image-index {
+        border-radius: 50%;
+        margin-left: 50px;
+        width: 200px;
+        height: auto;
+      }
+    }
+    .user-profile {
+      .avatar-image-show {
+        border-radius: 50%;
+        margin-left: 0px;
+        width: 230px;
+      }
+      .user-name-show {
+        font-size: 80px;
+      }
+      .follow-line {
+        .followes {
+          margin-top: 60px;
+        }
+        text-align: center;
+        .following-link {
+          font-size: 40px;
+          margin-right: 100px;
+        }
+        .follower-link {
+          font-size: 40px;
+        }
+      }
+      .follow-list {
+        margin: 0 auto;
+        text-align: center;
+      }
+    }
+    .posts-new {
+      .form-heading {
+        font-size: 70px;
+        color: #797676;
+      }
+      .form-control {
+        font-size: 40px;
+        height: 100px;
+        border-color: #578bd8;
+        font-weight: bold;
+      }
+      .form-content {
+        height: 180px;
+      }
+      .form-article {
+        height: 400px;
+      }
+      .ckeditor {
+        font-size: 40px;
+      }
+      .post-note {
+        font-size: 40px;
+      }
+      .show-title {
+        h1 {
+          font-size: 100px;
+        }
+      }
+    }
+  }
+}
