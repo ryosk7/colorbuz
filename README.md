@@ -1,4 +1,4 @@
-# Seed and Growth
+# colorbuz
 Social media and service for startups.
 ## versions
 | Langs          | Versions |
