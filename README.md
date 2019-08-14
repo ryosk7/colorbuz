@@ -1,20 +1,16 @@
 # colorbuz
-起業家密着メディア & 投稿サービス
-## Setup
+Social media and service for startups.
+## versions
+| Langs          | Versions |
+| -------------- | -------- |
+| Ruby           | 2.4.2    |
+| Rails          | 5.1.4    |
+| Docker         | 19.03.1  |
+| docker-compose | 1.24.1   |
+## setup
 ```sh
 $ docker-compose build
-$ docker-compose run frontend sh
-# (コンテナ内)
-$ npm install
-$ exit
-$ docker-compose down
 $ docker-compose up
-$ docker-compose exec frontend sh
-# (コンテナ内)
-$ firebase login --no-localhost
-# < Googleに身売りをしたくなければ、nを選択 >
-# linkをクリック
-# 任意のアカウントでログイン
-# 生成されたパスフレーズをターミナルにペースト
-# firabaseにlogin完了
+$ docker-compose exec web rails db:migrate
+$ open http://localhost:3000
 ```
