@@ -1,4 +1,4 @@
-FROM ruby:2.4.2
+FROM ruby:2.6.3-slim-buster
 RUN echo "deb http://deb.debian.org/debian jessie main" > /etc/apt/sources.list &&\
     echo "deb http://security.debian.org jessie/updates main" >> /etc/apt/sources.list &&\
     curl -sL https://deb.nodesource.com/setup_8.x | bash - &&\
