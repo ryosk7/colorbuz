@@ -1,9 +1,8 @@
 FROM ruby:2.6.3-slim-buster
-RUN echo "deb http://deb.debian.org/debian jessie main" > /etc/apt/sources.list &&\
-    echo "deb http://security.debian.org jessie/updates main" >> /etc/apt/sources.list &&\
+RUN apt-get update -qq &&\
+    apt-get install -y curl &&\
     curl -sL https://deb.nodesource.com/setup_8.x | bash - &&\
-    apt-get update -qq &&\
-    apt-get install -y nodejs mysql-client &&\
+    apt-get install -y nodejs mariadb-client-10.3 &&\
     apt-get install -y build-essential libpq-dev
 RUN mkdir /web
 WORKDIR /web
