@@ -19,7 +19,7 @@
     "@nuxtjs/vuetify": "^0.5.5",
     "firebase": "^6.2.4",
     "nuxt": "^2.0.0",
-    "pug": "^2.0.3",
+    "pug": "^3.0.1",
     "pug-loader": "^2.4.0",
     "pug-plain-loader": "^1.0.0",
     "stylus": "^0.54.5",
